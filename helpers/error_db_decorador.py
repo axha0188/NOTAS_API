@@ -16,8 +16,8 @@ def cerrar_sesion(fn):
     def cerrar(*args):
         try:
             return fn(*args)
-        except:
-            pass
+        except Exception as e:
+            return e
         finally:
             session.close()
     return cerrar

@@ -6,6 +6,7 @@ tipo_nota_model = Table(
     "tbl_tipo_nota",
     meta,
     Column("id", Integer, primary_key=True),
+    Column("titulo", String(20)),
     Column("descripcion", String(300)),
     Column("estado", Boolean),
     Column("creado", DATETIME),

@@ -1,16 +1,13 @@
 from models.nota_model import nota_model
 from schemas.nota_schema import NotaSchema
 from db.conexion import conn
-from helpers.error_db_decorador import error_transaccion,cerrar_sesion
+from helpers.error_db_decorador import error_transaccion, cerrar_sesion
 
 
 class NotaServices:
     @cerrar_sesion
     def listar_todos(self):
-        try:
-            return conn.execute(nota_model.select()).fetchall()
-        except Exception as error:
-            return error
+        return conn.execute(nota_model.select()).fetchall()
 
     @error_transaccion
     def grabar_registro(self, registro: NotaSchema):
@@ -47,7 +44,4 @@ class NotaServices:
 
     @error_transaccion
     def eliminar_registro(self, id: int):
-        try:
-            conn.execute(nota_model.delete().where(nota_model.c.id == id))
-        except:
-            pass
+        conn.execute(nota_model.delete().where(nota_model.c.id == id))

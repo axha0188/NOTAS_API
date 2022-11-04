@@ -11,5 +11,4 @@ class UsuarioSchema(BaseModel):
     clave: str
     estado: bool
     creado: str
-    usuario: int
     

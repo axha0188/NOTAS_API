@@ -13,7 +13,6 @@ usuario_model = Table(
     Column("clave", String(100)),
     Column("estado", Boolean),
     Column("creado", DATETIME),
-    Column("usuario", Integer),
 )
 
 meta.create_all(engine)
