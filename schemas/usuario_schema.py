@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Optional
 from pydantic import BaseModel, EmailStr
 
@@ -10,5 +11,5 @@ class UsuarioSchema(BaseModel):
     correo: EmailStr
     clave: str
     estado: bool
-    creado: str
+    creado: datetime
     

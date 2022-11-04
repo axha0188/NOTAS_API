@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Optional
 from pydantic import BaseModel
 
@@ -7,5 +8,5 @@ class TipoNotaSchema(BaseModel):
     titulo:str
     descripcion: str
     estado: bool
-    creado: str
+    creado: datetime
     usuario: int
